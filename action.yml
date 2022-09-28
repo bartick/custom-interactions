@@ -1,0 +1,26 @@
+name: 'Interaction'
+description: 'Get started with Container actions'
+author: 'bartick'
+inputs: 
+  token:
+    description: 'Token for the repository. Can be passed in using {{ secrets.GITHUB_TOKEN }}'
+    required: true
+  pr-message:
+    description: 'Comment to post on an individual''s PR'
+  pr-number:
+    description: 'Number of pull request interactions to trigger the comment'
+    default: '1'
+  pr-once:
+    description: 'Only post the comment once per PR'
+    default: 'true'
+  issue-message:
+    description: 'Comment to post on an individual''s issue'
+  issue-number:
+    description: 'Number of issue interactions to trigger the comment'
+    default: '1'
+  issue-once:
+    description: 'Only post the comment once per issue'
+    default: 'false'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
