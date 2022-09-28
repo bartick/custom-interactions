@@ -1,5 +1,5 @@
 {
-  "name": "interactions",
+  "name": "custom-interactions",
   "version": "1.0.0",
   "description": "A simple interactions library to help you create interactions for your github issues and pull requests",
   "main": "lib/main.js",
