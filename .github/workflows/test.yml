@@ -1,0 +1,25 @@
+name: Unit Test
+on:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+jobs:
+
+  # test action works running from the graph
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ./
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: |
+          Thanks for opening this issue! One of our maintainers will get back to you shortly.
+        pr-message: |
+          Thanks for opening this PR! One of our maintainers will get back to you shortly.
+        pr-once: false
+        issue-once: false
+        pr-number: 0
+        issue-number: 0
