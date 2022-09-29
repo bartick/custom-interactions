@@ -1,4 +1,8 @@
 # Custom Interactions
+![codeql](https://github.com/bartick/custom-interactions/actions/workflows/codeql-analysis.yml/badge.svg) &nbsp;
+![Custom Interaction](https://github.com/bartick/custom-interactions/actions/workflows/test.yml/badge.svg)      
+&nbsp;
+
 Have you every wondered why just use github action reply for 1st interaction and not n<sup>th</sup> Interaction or upto n<sup>th</sup> interaction.       
 This action (custom-interactions) helps you achieve that goal. You can use it to create custom interactions for your github action for upto n<sup>th</sup> interaction.
 
