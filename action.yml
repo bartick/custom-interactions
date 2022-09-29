@@ -1,5 +1,5 @@
 name: 'Custom Interaction'
-description: 'Get started with Container actions'
+description: 'A simple interactions library to help you create custom interactions for your github issues and pull requests'
 author: 'bartick'
 inputs: 
   token:
@@ -24,3 +24,6 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+branding:
+  icon: 'play-circle'
+  color: 'green'
