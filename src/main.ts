@@ -114,7 +114,7 @@ async function checkIssue(
     checkIssueNumber = Number(checkIssueNumber);
   }
 
-  if (checkIssueNumber <= 0) throw new Error('issue-number must be greater than 0');
+  if (checkIssueNumber < 0) throw new Error('issue-number must be greater than or equal to 0');
 
   if (issues.length <= checkIssueNumber || checkIssueNumber == 0) {
     return type_once ? issues.length === checkIssueNumber : true;
@@ -145,7 +145,7 @@ async function checkPR(
     checkPRNumber = Number(checkPRNumber);
   }
 
-  if (checkPRNumber <= 0) throw new Error('pr-number must be greater than 0');
+  if (checkPRNumber < 0) throw new Error('pr-number must be greater than or equal to 0');
 
   if (prs.length <= checkPRNumber || checkPRNumber == 0) {
     return true;
