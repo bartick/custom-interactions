@@ -1,5 +1,40 @@
-# Container Action Template
+# Custom Interactions
+Have you every wondered why just use github action reply for 1st interaction and not n<sup>th</sup> Interaction or upto n<sup>th</sup> interaction.       
+This action (custom-interactions) helps you achieve that goal. You can use it to create custom interactions for your github action for upto n<sup>th</sup> interaction.
 
-To get started, click the `Use this template` button on this repository [which will create a new repository based on this template](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/).
+## Input
+| Name | Description |
+| --- | --- |
+| `token` | Token for the repository. Can be passed in using {{ secrets.GITHUB_TOKEN }} |
+| `issue-message` | Comment to post on an individual''s issue |
+| `issue-number` | The number of interaction this action should be valid for. |
+| `issue-once` | `true` or `false`. This states if the interaction is on/upto n<sup>th</sup> interaction |
+| `pr-message` | Comment to post on an individual''s PR |
+| `pr-number` | The number of interaction this action should be valid for. |
+| `pr-once` | `true` or `false`. This states if the interaction is on/upto n<sup>th</sup> interaction |
 
-For info on how to build your first Container action using the toolkit, see the [toolkit docs folder](https://github.com/actions/toolkit/blob/master/docs).
+## Example
+```yaml
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: bartick/custom-interactions@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: |
+          Thank you for opening your first issue in our repository, one of our maintainers will get in touch with you soon.
+        pr-message: |
+          Thank you for opening your first pull request in our repository, one of our maintainers will get in touch with you soon.
+        pr-once: false
+        issue-once: false
+        pr-number: 10
+        issue-number: 10
+```
