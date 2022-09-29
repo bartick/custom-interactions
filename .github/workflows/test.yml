@@ -1,4 +1,4 @@
-name: Unit Test
+name: Custom Interaction 
 on:
   issues:
     types: [opened]
